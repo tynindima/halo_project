@@ -1,4 +1,5 @@
 {
+  "homepage": ".",
   "name": "halo-project",
   "version": "0.1.0",
   "private": true,
@@ -10,11 +11,25 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3"
   },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6",
+    "gh-pages": "^3.1.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.3.0",
+    "stylelint": "^13.7.0",
+    "stylelint-config-standard": "^20.0.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
@@ -32,13 +47,19 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.6.0",
-    "eslint-config-airbnb": "^18.2.0",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-react": "^7.20.6",
-    "gh-pages": "^3.1.0"
+  "lint-staged": {
+    "*.css": [
+      "stylelint",
+      "git add"
+    ],
+    "*.js": [
+      "eslint",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
