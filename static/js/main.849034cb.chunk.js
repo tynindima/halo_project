@@ -1,0 +1,2 @@
+(this["webpackJsonphalo-project"]=this["webpackJsonphalo-project"]||[]).push([[0],[,,,function(e,t,n){e.exports=n(10)},,,,,function(e,t,n){},function(e,t,n){},function(e,t,n){"use strict";n.r(t);var a=n(0),l=n.n(a),r=n(2),c=n.n(r);n(8),n(9);var o=function(){return l.a.createElement("div",{className:"App"},l.a.createElement("header",null,l.a.createElement("h1",null,"hello"),"Halo project"))};c.a.render(l.a.createElement(l.a.StrictMode,null,l.a.createElement(o,null)),document.getElementById("root"))}],[[3,1,2]]]);
+//# sourceMappingURL=main.849034cb.chunk.js.map
