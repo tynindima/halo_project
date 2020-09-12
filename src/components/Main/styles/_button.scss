@@ -1,0 +1,13 @@
+.button {
+  width: 144px;
+  height: 56px;
+  border-width: 0;
+  border-radius: 8px;
+  background-color: $bg-btn-color;
+  color: $white-color;
+  font-family: "Open Sasn", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+}

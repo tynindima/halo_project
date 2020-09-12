@@ -1,0 +1,47 @@
+.number-group {
+  width: 492px;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #1e34a5;
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  &__item.active {
+    background-color: #da3f5b;
+  }
+
+  &__item:nth-child(2) {
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(50% - 1px);
+      width: 184px;
+      height: 2px;
+      background-color: #e8e8e8;
+      opacity: 0.2;
+      border-radius: 8px;
+    }
+
+    &::before {
+      right: 38px;
+    }
+
+    &::after {
+      left: 38px;
+    }
+  }
+}
