@@ -9,24 +9,25 @@ const NewField = (props) => {
     placeholder,
     value,
     onChange,
+    errorMessage,
     isValid,
-    isNumberValid
+    onBlur
   } = props;
 
-  let mistake = '';
+  const handleBlud = (event) => {
+    const { target } = event;
 
-  if (isValid) {
-    mistake = 'This field in required';
-  } else if (isNumberValid) {
-    mistake = 'Please enter number from 1 to 99';
-  }
+    onBlur(target.name);
+  };
 
   return (
     <div>
       <label className="main__label" htmlFor={name}>
         {label}
+        {name !== 'company' && <span className="main__asterisk">*</span> }
+
         <input
-          className={cx('main__input', { error: isValid }, { error: isNumberValid })}
+          className={cx('main__input', { error: isValid })}
           name={name}
           id={name}
           value={value}
@@ -34,9 +35,10 @@ const NewField = (props) => {
           type="text"
           autoComplete="off"
           onChange={onChange}
+          onBlur={handleBlud}
         />
       </label>
-      <p className="main__valid-text">{mistake}</p>
+      <p className="main__valid-text">{errorMessage}</p>
     </div>
   );
 };
@@ -47,13 +49,15 @@ NewField.propTypes = {
   placeholder: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  onBlur: PropTypes.func,
+  errorMessage: PropTypes.string,
   isValid: PropTypes.bool,
-  isNumberValid: PropTypes.bool,
 };
 
 NewField.defaultProps = {
   isValid: false,
-  isNumberValid: false
+  errorMessage: '',
+  onBlur: () => {},
 };
 
 export default NewField;

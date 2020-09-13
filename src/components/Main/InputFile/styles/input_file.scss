@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@import "../../../../design-tokens/variables";
 
 .input-file {
   display: flex;
@@ -18,9 +18,10 @@
     position: relative;
     border: none;
     outline: none;
+    height: 18px;
     font-size: 14px;
     padding-left: 40px;
-    background-color: #fff;
+    background-color: $white-color;
     cursor: pointer;
 
     &::before {
@@ -39,5 +40,13 @@
 
   &__counting-text {
     color: $placeholder-color;
+  }
+}
+
+@media (max-width: $mediamWidthTablet) {
+  .input-file {
+    &__text-mobile {
+      display: none;
+    }
   }
 }

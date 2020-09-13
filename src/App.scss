@@ -1,11 +1,17 @@
+@import "./design-tokens/fonts";
+
 * {
   box-sizing: border-box;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background: linear-gradient(228.75deg, #216190 19.65%, #0834D0 81.25%);
   font-family: "Open Sanse", sans-serif;
+  padding: 60px 15px 30px;
+}
+
+@media (max-width: 648px) {
+  .container {
+    padding: 20px 10px 15px;
+  }
 }

@@ -1,23 +1,29 @@
-@import "variables";
+@import "../../../design-tokens/variables";
+
+@import "../../../design-tokens/fonts";
 
 @import "button";
 
-@import "fonts";
+
 
 .main {
-  width: 608px;
-  height: 727px;
+  max-width: $mainWidth;
   border-radius: 8px;
-  margin-top: 51px;
+  margin: 51px auto 10px;
   padding: 56px;
-  background-color: #fff;
+  background-color: $white-color;
   font-family: "Open Sans", sans-serif;
 
   &__box {
     display: grid;
     grid-template-columns: 3fr 2fr;
     grid-gap: 38px;
+  }
 
+  &__business {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
   }
 
   &__input {
@@ -29,6 +35,7 @@
     border-radius: 8px;
     border: 1px solid $white-color;
     padding: 8px 16px;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
     outline: none;
 
@@ -44,15 +51,13 @@
   &__label {
     font-size: 14px;
     line-height: 100%;
+    width: 100%;
     color: $label-color;
   }
 
-  &__business {
-    margin-top: 12px;
-  }
+
 
   &__textarea {
-    display: block;
     width: 100%;
     height: 168px;
     margin-top: 8px;
@@ -60,17 +65,21 @@
     border-radius: 8px;
     border: 1px solid $white-color;
     padding: 8px 16px;
+    font-family: "Open Sans", sans-serif;
     font-size: 14px;
-    color: $placeholder-color;
     outline: none;
 
     &.error {
       border-color: $error-color;
     }
+
+    &::placeholder {
+      color: $placeholder-color;
+    }
   }
 
   &__valid-text {
-    font-size: 10px;
+    font-size: 11px;
     height: 16px;
     margin: 8px 0;
     color: $error-color;
@@ -78,5 +87,39 @@
 
   &__button {
     margin-top: 40px;
+  }
+
+  &__asterisk {
+    color: $error-color;
+    margin-left: 3px;
+  }
+}
+
+@media (max-width: $mediamWidthTablet) {
+  .main {
+    max-width: 530px;
+    padding: 28px;
+
+    &__box {
+      grid-template-columns: 1fr;
+      grid-gap: 6px;
+    }
+
+    &__business {
+      margin-top: 6px;
+    }
+
+    &__input {
+      font-size: 12px;
+    }
+
+    &__textarea {
+      height: 100px;
+    }
+
+    &__button {
+      margin-top: 30px;
+      width: 100%;
+    }
   }
 }

@@ -1,47 +1,59 @@
 .number-group {
-  width: 492px;
+  max-width: 492px;
   height: 30px;
-  display: flex;
-  justify-content: space-between;
+  position: relative;
 
   &__item {
-    position: relative;
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
+    top: 0;
     width: 30px;
     height: 30px;
     border-radius: 50%;
     background-color: #1e34a5;
     font-weight: bold;
     font-size: 18px;
-    color: #fff;
+    color: $white-color;
     cursor: pointer;
+
+    &-1 {
+      left: 0;
+    }
+
+    &-2 {
+      left: calc(50% - 15px);
+    }
+
+    &-3 {
+      right: 0;
+    }
   }
 
   &__item.active {
-    background-color: #da3f5b;
+    background-color: $bg-btn-color;
   }
 
-  &__item:nth-child(2) {
-    &::after,
-    &::before {
-      content: "";
-      position: absolute;
-      top: calc(50% - 1px);
-      width: 184px;
-      height: 2px;
-      background-color: #e8e8e8;
-      opacity: 0.2;
-      border-radius: 8px;
-    }
 
-    &::before {
-      right: 38px;
-    }
-
-    &::after {
-      left: 38px;
-    }
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 1px);
+    width: calc(50% - 60px);
+    height: 2px;
+    background-color: $top-line-color;
+    opacity: 0.2;
+    border-radius: 8px;
   }
+
+  &::before {
+    right: 38px;
+  }
+
+  &::after {
+    left: 38px;
+  }
+
 }

@@ -19,7 +19,8 @@ const InputFile = (props) => {
   return (
     <div className="input-file">
       <button className="input-file__btn" type="button" onClick={handleClick}>
-        Add file as attachment
+        Add
+        <span className="input-file__text-mobile"> file as attachment</span>
       </button>
       <input
         className="input-file__input"
@@ -27,7 +28,10 @@ const InputFile = (props) => {
         ref={hiddenFileInput}
         onChange={handleChange}
       />
-      <span className="input-file__counting-text">{`${files.length} files attached`}</span>
+      <p className="input-file__counting-text">
+        {`${files.length} files `}
+        <span className="input-file__text-mobile">attached</span>
+      </p>
     </div>
   );
 };
