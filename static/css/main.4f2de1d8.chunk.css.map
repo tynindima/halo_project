@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.css","App.css"],"names":[],"mappings":"AAAA,KACE,QAAS,CACT,SACF,CCHA,KACE,iBAAkB,CAClB,WACF,CAEA,OACE,cACF","file":"main.4f2de1d8.chunk.css","sourcesContent":["body {\n  margin: 0;\n  padding: 0;\n}\n",".App {\n  text-align: center;\n  color: green;\n}\n\n.title {\n  font-size: 60px;\n}\n"]}
